@@ -19,52 +19,29 @@
       box-sizing: border-box;
     }
 
-
     body {
-
       margin: 0;
-
       font-family: Arial, sans-serif;
-
       background: #f4f4f4;
-
       color: #333;
-
     }
-
 
     .page {
-
       min-height: 100vh;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       padding: 25px 15px;
-
     }
 
-
     .card {
-
       width: 100%;
-
       max-width: 430px;
-
       background: white;
-
       border-radius: 20px;
-
-      box-shadow:
-        0 6px 30px rgba(0,0,0,0.12);
-
+      box-shadow: 0 6px 30px rgba(0,0,0,0.12);
       text-align: center;
-
       overflow: hidden;
-
     }
 
 
@@ -72,30 +49,18 @@
        LOGO HEADER
     ============================== */
 
-
     .logo-section {
-
       background: #494d4e;
-
       padding: 28px 20px 25px;
-
       text-align: center;
-
     }
 
-
     .logo {
-
       width: 190px;
-
       max-width: 70%;
-
       height: auto;
-
       display: block;
-
       margin: 0 auto;
-
     }
 
 
@@ -103,253 +68,150 @@
        MAIN CONTENT
     ============================== */
 
-
     .content {
-
       padding: 28px 22px 30px;
-
     }
-
 
     h1 {
-
       font-size: 24px;
-
       margin: 0 0 8px;
-
       color: #333;
-
     }
-
 
     .subtitle {
-
       font-size: 14px;
-
       color: #777;
-
       margin-bottom: 23px;
-
       line-height: 1.5;
-
     }
-
 
 
     /* ==============================
        EVENT BOX
     ============================== */
 
-
     .event-box {
-
       background: #fff7f0;
-
       border-radius: 10px;
-
       padding: 14px 15px;
-
       margin-bottom: 20px;
-
     }
-
 
     .event-label {
-
       font-size: 11px;
-
       color: #999;
-
       letter-spacing: 1.5px;
-
       margin-bottom: 5px;
-
     }
-
 
     .event-name {
-
       font-size: 15px;
-
       font-weight: bold;
-
       color: #f58220;
-
       line-height: 1.4;
-
     }
-
 
 
     /* ==============================
        BUTTONS
     ============================== */
 
-
     .claim-button,
     .download-button {
-
       width: 100%;
-
       border: none;
-
       border-radius: 10px;
-
       padding: 16px;
-
       font-size: 16px;
-
       font-weight: bold;
-
       cursor: pointer;
-
       background: #f58220;
-
       color: white;
-
       transition: 0.2s;
-
     }
-
 
     .claim-button:hover,
     .download-button:hover {
-
       background: #df6f12;
-
     }
-
 
     .claim-button:active,
     .download-button:active {
-
       transform: scale(0.99);
-
     }
-
 
 
     /* ==============================
        NOTES
     ============================== */
 
-
     .note {
-
       margin-top: 17px;
-
       font-size: 12px;
-
       color: #888;
-
       line-height: 1.5;
-
     }
-
 
 
     /* ==============================
        VOUCHER
     ============================== */
 
-
     .voucher {
-
       display: none;
-
     }
-
 
     .success {
-
       font-size: 19px;
-
       font-weight: bold;
-
       margin-bottom: 17px;
-
       color: #333;
-
     }
-
 
     #voucherPreview {
-
       width: 100%;
-
       display: block;
-
       border-radius: 12px;
-
-      box-shadow:
-        0 3px 15px rgba(0,0,0,0.10);
-
+      box-shadow: 0 3px 15px rgba(0,0,0,0.10);
     }
-
 
     .download-button {
-
       margin-top: 17px;
-
     }
-
 
 
     /* ==============================
        CLAIMED MESSAGE
     ============================== */
 
-
     .claimed-box {
-
       display: none;
-
       background: #fff7f0;
-
       border: 1px solid #f58220;
-
       color: #d96b10;
-
       padding: 17px;
-
       border-radius: 10px;
-
       margin-top: 15px;
-
       font-weight: bold;
-
     }
-
-
-
-    /* Hide canvas */
 
     canvas {
-
       display: none;
-
     }
-
 
   </style>
 
 </head>
 
 
-
 <body>
 
-
 <div class="page">
-
 
   <div class="card">
 
 
-    <!-- ==============================
-         GREY LOGO HEADER
-    =============================== -->
-
+    <!-- LOGO HEADER -->
 
     <div class="logo-section">
 
@@ -362,108 +224,67 @@
     </div>
 
 
-
-    <!-- ==============================
-         CONTENT
-    =============================== -->
-
-
     <div class="content">
-
 
 
       <!-- CLAIM SECTION -->
 
-
       <div id="claimSection">
-
 
         <h1>
           Claim Your eVoucher
         </h1>
 
-
         <div class="subtitle">
-
-          A complimentary voucher
-          specially for you.
-
+          A complimentary voucher specially for you.
         </div>
 
 
-
-        <!-- EVENT -->
-
+        <!-- EVENT INFORMATION -->
 
         <div class="event-box">
 
-
           <div class="event-label">
-
             EVENT
-
           </div>
-
 
           <div
             class="event-name"
             id="eventDisplay"
           ></div>
 
-
         </div>
-
-
-
-        <!-- CLAIM BUTTON -->
 
 
         <button
           class="claim-button"
           onclick="claimVoucher()"
         >
-
           CLAIM MY VOUCHER
-
         </button>
 
 
-
         <div class="note">
-
-          Limited to one voucher
-          per device.
-
+          Limited to one voucher per device.
         </div>
-
 
       </div>
 
 
 
-      <!-- ==============================
-           VOUCHER SECTION
-      =============================== -->
-
+      <!-- VOUCHER SECTION -->
 
       <div
         id="voucherSection"
         class="voucher"
       >
 
-
         <div
           id="successMessage"
           class="success"
         >
-
           🎉 Your eVoucher is ready!
-
         </div>
-
-
-
-        <!-- GENERATED VOUCHER -->
 
 
         <img
@@ -472,62 +293,38 @@
         >
 
 
-
-        <!-- DOWNLOAD -->
-
-
         <button
           id="downloadButton"
           class="download-button"
           onclick="downloadVoucher()"
         >
-
           ↓ DOWNLOAD VOUCHER
-
         </button>
-
-
-
-        <!-- ALREADY CLAIMED -->
 
 
         <div
           id="claimedBox"
           class="claimed-box"
         >
-
           ✓ VOUCHER ALREADY CLAIMED
-
         </div>
-
 
 
         <div
           id="voucherNote"
           class="note"
         >
-
-          Save this voucher and present it
-          during redemption.
-
+          Save this voucher and present it during redemption.
         </div>
-
 
       </div>
 
 
-
-      <!-- Hidden Canvas -->
-
-
       <canvas id="voucherCanvas"></canvas>
-
 
     </div>
 
-
   </div>
-
 
 </div>
 
@@ -539,86 +336,65 @@
 /* ==================================================
    EVENT SETTINGS
 
-   ONLY CHANGE THESE 2 FOR EACH EVENT
+   CHANGE THESE 2 FOR EACH EVENT
 ================================================== */
-
 
 const EVENT_NAME =
   "CTRM 09/2026";
-
 
 const EVENT_ID =
   "CTRM 09/2026";
 
 
-
 /* ==================================================
    VOUCHER IMAGE
-
-   This image must exist in GitHub
 ================================================== */
-
 
 const VOUCHER_IMAGE =
   "evoucher.jpeg";
 
 
-
 /* ==================================================
-   DEVICE STORAGE
+   STORAGE
 ================================================== */
-
 
 const STORAGE_KEY =
   "eyecon_voucher_" + EVENT_ID;
 
 
-
 /* ==================================================
-   SHOW EVENT NAME ON PAGE
+   DISPLAY EVENT NAME
 ================================================== */
-
 
 document.getElementById(
   "eventDisplay"
 ).textContent = EVENT_NAME;
 
 
-
 /* ==================================================
-   CHECK IF THIS DEVICE ALREADY DOWNLOADED
+   CHECK PREVIOUS DOWNLOAD
 ================================================== */
-
 
 window.addEventListener(
   "load",
   function () {
 
-
     const alreadyDownloaded =
-      localStorage.getItem(
-        STORAGE_KEY
-      );
+      localStorage.getItem(STORAGE_KEY);
 
-
-    if (
-      alreadyDownloaded === "downloaded"
-    ) {
+    if (alreadyDownloaded === "downloaded") {
 
       showAlreadyClaimed();
 
     }
 
-
   }
 );
 
 
-
 /* ==================================================
-   CLAIM VOUCHER
+   CLAIM
 ================================================== */
-
 
 function claimVoucher() {
 
@@ -627,158 +403,137 @@ function claimVoucher() {
 }
 
 
-
 /* ==================================================
    GENERATE VOUCHER
 ================================================== */
 
-
 function generateVoucher() {
-
 
   const image =
     new Image();
-
 
   image.src =
     VOUCHER_IMAGE;
 
 
-
   image.onload = function () {
-
 
     const canvas =
       document.getElementById(
         "voucherCanvas"
       );
 
-
     const ctx =
       canvas.getContext("2d");
 
 
-
-    /* Use original voucher size */
-
+    /* ORIGINAL IMAGE SIZE */
 
     canvas.width =
       image.naturalWidth;
-
 
     canvas.height =
       image.naturalHeight;
 
 
-
-    /* Draw original voucher */
-
+    /* DRAW ORIGINAL VOUCHER */
 
     ctx.drawImage(
-
       image,
-
       0,
-
       0,
-
       canvas.width,
-
       canvas.height
-
     );
 
 
-
     /* ==================================================
-       ADD EVENT NAME TO ACTUAL VOUCHER IMAGE
+       EVENT NAME - BOTTOM RIGHT CORNER
     ================================================== */
 
 
-    const centerX =
-      canvas.width / 2;
+    /*
+       Distance from RIGHT edge.
 
+       Increase 0.04 if you want
+       more space from the edge.
+    */
+
+    const rightPadding =
+      canvas.width * 0.035;
 
 
     /*
-       EVENT POSITION
+       Distance from BOTTOM edge.
 
-       0.88 = higher
-       0.92 = current
-       0.95 = lower
+       Increase this value to move
+       the event name HIGHER.
     */
 
+    const bottomPadding =
+      canvas.height * 0.04;
+
+
+    const eventX =
+      canvas.width - rightPadding;
 
     const eventY =
-      canvas.height * 0.92;
+      canvas.height - bottomPadding;
 
 
-
-    /* EVENT LABEL */
-
+    /* RIGHT ALIGN */
 
     ctx.textAlign =
-      "center";
-
+      "right";
 
     ctx.textBaseline =
-      "middle";
+      "bottom";
 
+
+    /* ------------------------------
+       EVENT LABEL
+    ------------------------------ */
 
     ctx.fillStyle =
       "#494d4e";
 
-
     ctx.font =
       "bold " +
       Math.round(
-        canvas.width * 0.022
+        canvas.width * 0.018
       ) +
       "px Arial";
 
 
     ctx.fillText(
-
       "EVENT",
-
-      centerX,
-
+      eventX,
       eventY -
-      (canvas.height * 0.045)
-
+      (canvas.height * 0.038)
     );
 
 
-
-    /* EVENT NAME */
-
+    /* ------------------------------
+       EVENT NAME
+    ------------------------------ */
 
     ctx.fillStyle =
       "#f58220";
 
 
-    drawCenteredText(
-
+    drawRightText(
       ctx,
-
       EVENT_NAME,
-
-      centerX,
-
+      eventX,
       eventY,
-
-      canvas.width * 0.86,
-
-      canvas.width * 0.035
-
+      canvas.width * 0.65,
+      canvas.width * 0.027
     );
 
 
-
     /* ==================================================
-       CREATE FINAL VOUCHER IMAGE
+       GENERATE FINAL VOUCHER
     ================================================== */
-
 
     const generatedVoucher =
       canvas.toDataURL(
@@ -787,15 +542,10 @@ function generateVoucher() {
       );
 
 
-
     document.getElementById(
       "voucherPreview"
     ).src =
       generatedVoucher;
-
-
-
-    /* Hide claim screen */
 
 
     document.getElementById(
@@ -804,65 +554,40 @@ function generateVoucher() {
       "none";
 
 
-
-    /* Show voucher */
-
-
     document.getElementById(
       "voucherSection"
     ).style.display =
       "block";
 
-
   };
-
-
-
-  /* IMAGE ERROR */
 
 
   image.onerror = function () {
 
-
     alert(
-      "Unable to load evoucher.jpeg. Please make sure the image is uploaded to the same GitHub repository."
+      "Unable to load evoucher.jpeg. Please make sure the image is uploaded to GitHub."
     );
 
-
   };
-
 
 }
 
 
-
 /* ==================================================
    AUTO RESIZE EVENT NAME
-
-   Prevent long event names overflowing
 ================================================== */
 
-
-function drawCenteredText(
-
+function drawRightText(
   ctx,
-
   text,
-
   x,
-
   y,
-
   maxWidth,
-
   startingSize
-
 ) {
-
 
   let fontSize =
     startingSize;
-
 
 
   ctx.font =
@@ -871,52 +596,35 @@ function drawCenteredText(
     "px Arial";
 
 
-
   while (
-
-    ctx.measureText(text).width >
-      maxWidth &&
-
-    fontSize > 18
-
+    ctx.measureText(text).width > maxWidth &&
+    fontSize > 16
   ) {
 
-
     fontSize -= 2;
-
 
     ctx.font =
       "bold " +
       fontSize +
       "px Arial";
 
-
   }
 
 
-
   ctx.fillText(
-
     text,
-
     x,
-
     y
-
   );
-
 
 }
 
 
-
 /* ==================================================
-   DOWNLOAD VOUCHER
+   DOWNLOAD
 ================================================== */
 
-
 function downloadVoucher() {
-
 
   const canvas =
     document.getElementById(
@@ -924,19 +632,14 @@ function downloadVoucher() {
     );
 
 
-
   const link =
-    document.createElement(
-      "a"
-    );
-
+    document.createElement("a");
 
 
   link.download =
     "Eyecon-eVoucher-" +
     EVENT_ID +
     ".jpeg";
-
 
 
   link.href =
@@ -946,40 +649,23 @@ function downloadVoucher() {
     );
 
 
-
-  /* Trigger download */
-
-
   document.body.appendChild(
     link
   );
 
-
   link.click();
-
 
   document.body.removeChild(
     link
   );
 
 
-
-  /* ==================================================
-     REMEMBER THAT THIS DEVICE DOWNLOADED
-  ================================================== */
-
+  /* SAVE DOWNLOADED STATUS */
 
   localStorage.setItem(
-
     STORAGE_KEY,
-
     "downloaded"
-
   );
-
-
-
-  /* Hide download button */
 
 
   document.getElementById(
@@ -988,39 +674,24 @@ function downloadVoucher() {
     "none";
 
 
-
-  /* Show claimed message */
-
-
   document.getElementById(
     "claimedBox"
   ).style.display =
     "block";
 
-
 }
-
 
 
 /* ==================================================
    ALREADY CLAIMED
 ================================================== */
 
-
 function showAlreadyClaimed() {
-
-
-  /* Hide claim section */
-
 
   document.getElementById(
     "claimSection"
   ).style.display =
     "none";
-
-
-
-  /* Show voucher section */
 
 
   document.getElementById(
@@ -1029,18 +700,10 @@ function showAlreadyClaimed() {
     "block";
 
 
-
-  /* Hide voucher image */
-
-
   document.getElementById(
     "voucherPreview"
   ).style.display =
     "none";
-
-
-
-  /* Hide download */
 
 
   document.getElementById(
@@ -1049,15 +712,10 @@ function showAlreadyClaimed() {
     "none";
 
 
-
-  /* Show claimed notice */
-
-
   document.getElementById(
     "claimedBox"
   ).style.display =
     "block";
-
 
 
   document.getElementById(
@@ -1066,15 +724,12 @@ function showAlreadyClaimed() {
     "Thank you!";
 
 
-
   document.getElementById(
     "voucherNote"
   ).textContent =
     "This voucher has already been downloaded on this device.";
 
-
 }
-
 
 </script>
 
