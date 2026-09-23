@@ -55,35 +55,21 @@
       line-height: 1.5;
     }
 
-    .phone-wrapper {
-      display: flex;
-      align-items: center;
+    .phone-input {
+      width: 100%;
+      padding: 15px;
       border: 1px solid #ccc;
       border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 12px;
-      background: white;
-    }
-
-    .country-code {
-      padding: 15px 13px;
-      background: #f2f2f2;
-      border-right: 1px solid #ddd;
-      font-size: 16px;
-      white-space: nowrap;
-    }
-
-    .phone-input {
-      flex: 1;
-      min-width: 0;
-      padding: 15px 12px;
-      border: none;
-      outline: none;
       font-size: 17px;
+      margin-bottom: 12px;
+      outline: none;
     }
 
-    .claim-button,
-    .download-button {
+    .phone-input:focus {
+      border-color: #555;
+    }
+
+    .claim-button {
       width: 100%;
       border: none;
       border-radius: 10px;
@@ -95,9 +81,8 @@
       color: white;
     }
 
-    .claim-button:disabled {
-      background: #999;
-      cursor: not-allowed;
+    .claim-button:hover {
+      background: #111;
     }
 
     .note {
@@ -107,19 +92,9 @@
       line-height: 1.5;
     }
 
-    .error {
-      display: none;
-      background: #fff1f1;
-      color: #b00020;
-      padding: 11px;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      font-size: 13px;
-    }
-
     .voucher {
       display: none;
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     .voucher img {
@@ -131,280 +106,108 @@
     .download-button {
       display: block;
       margin-top: 15px;
+      padding: 15px;
+      background: #333;
+      color: white;
       text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
     }
 
     .success {
       font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .existing-message {
-      display: none;
-      background: #f3f3f3;
-      padding: 10px;
-      border-radius: 8px;
       margin-bottom: 15px;
-      font-size: 13px;
     }
 
-    .voucher-number-box {
-      margin: 15px 0;
-      padding: 14px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: #fafafa;
-    }
-
-    .voucher-number-label {
-      font-size: 12px;
-      color: #777;
-      margin-bottom: 4px;
-    }
-
-    .voucher-number {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .status {
-      margin-top: 6px;
-      font-size: 12px;
-      font-weight: bold;
-    }
   </style>
 </head>
 
 <body>
 
-<div class="page">
-  <div class="card">
+  <div class="page">
 
-    <div class="brand">EYECON</div>
+    <div class="card">
 
-    <div id="claimSection">
+      <div class="brand">EYECON</div>
 
       <h1>Claim Your eVoucher</h1>
 
       <div class="subtitle">
-        Enter your Malaysian mobile number to receive your complimentary voucher.
+        Enter your mobile number to receive your complimentary voucher.
       </div>
 
-      <div id="errorMessage" class="error"></div>
-
-      <div class="phone-wrapper">
-        <div class="country-code">🇲🇾 +60</div>
+      <div id="claimSection">
 
         <input
           id="phone"
           class="phone-input"
           type="tel"
-          inputmode="numeric"
-          autocomplete="tel"
-          placeholder="12 345 6789"
-          maxlength="13"
+          placeholder="e.g. 0123456789"
         >
-      </div>
 
-      <button
-        id="claimButton"
-        class="claim-button"
-        onclick="claimVoucher()"
-      >
-        CLAIM MY VOUCHER
-      </button>
+        <button
+          class="claim-button"
+          onclick="claimVoucher()"
+        >
+          CLAIM MY VOUCHER
+        </button>
 
-      <div class="note">
-        Limited to one voucher per mobile number.
-      </div>
-
-    </div>
-
-
-    <div id="voucherSection" class="voucher">
-
-      <div id="successTitle" class="success">
-        🎉 Your eVoucher is ready!
-      </div>
-
-      <div id="existingMessage" class="existing-message">
-        This mobile number has already claimed a voucher.
-        Here's your existing voucher.
-      </div>
-
-      <div class="voucher-number-box">
-
-        <div class="voucher-number-label">
-          VOUCHER NUMBER
-        </div>
-
-        <div id="voucherNumber" class="voucher-number">
-          EV-000000
-        </div>
-
-        <div id="voucherStatus" class="status">
-          VALID
+        <div class="note">
+          Limited to one voucher per mobile number.
         </div>
 
       </div>
 
-      <img
-        src="evoucher.jpeg"
-        alt="Eyecon eVoucher"
-      >
 
-      <a
-        href="evoucher.jpeg"
-        download="Eyecon-eVoucher.jpeg"
-        class="download-button"
-      >
-        ↓ DOWNLOAD VOUCHER
-      </a>
+      <div id="voucherSection" class="voucher">
 
-      <div class="note">
-        Save this voucher and present it during redemption.
+        <div class="success">
+          🎉 Your eVoucher is ready!
+        </div>
+
+        <img
+          src="evoucher.jpeg"
+          alt="Eyecon eVoucher"
+        >
+
+        <a
+          href="evoucher.jpeg"
+          download="Eyecon-eVoucher.jpeg"
+          class="download-button"
+        >
+          ↓ DOWNLOAD VOUCHER
+        </a>
+
+        <div class="note">
+          Save this voucher and present it during redemption.
+        </div>
+
       </div>
 
     </div>
 
   </div>
-</div>
 
 
-<script>
+  <script>
 
-const API_URL =
-  "https://script.google.com/macros/s/AKfycbyUpZbUyKA1dtKRPbjCOPY2pGX3F42nMgbG7cEO6Ys3NafO4DIRobW16qSBoqS9zSch/exec";
+    function claimVoucher() {
 
+      const phone =
+        document.getElementById("phone").value.trim();
 
-function showError(message) {
+      if (phone.length < 9) {
+        alert("Please enter a valid mobile number.");
+        return;
+      }
 
-  const errorBox =
-    document.getElementById("errorMessage");
+      document.getElementById("claimSection").style.display = "none";
 
-  errorBox.textContent = message;
-  errorBox.style.display = "block";
-
-}
-
-
-function hideError() {
-
-  document.getElementById("errorMessage")
-    .style.display = "none";
-
-}
-
-
-async function claimVoucher() {
-
-  hideError();
-
-  const phoneInput =
-    document.getElementById("phone");
-
-  const claimButton =
-    document.getElementById("claimButton");
-
-  let phone =
-    phoneInput.value.replace(/\D/g, "");
-
-  // If customer enters 012..., remove the first 0.
-  if (phone.startsWith("0")) {
-    phone = phone.substring(1);
-  }
-
-  // Malaysian mobile number after +60
-  if (!/^1\d{8,9}$/.test(phone)) {
-
-    showError(
-      "Please enter a valid Malaysian mobile number."
-    );
-
-    return;
-  }
-
-
-  claimButton.disabled = true;
-  claimButton.textContent = "GENERATING VOUCHER...";
-
-
-  try {
-
-    const response = await fetch(API_URL, {
-
-      method: "POST",
-
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
-
-      body: JSON.stringify({
-        phone: phone
-      })
-
-    });
-
-
-    const data = await response.json();
-
-
-    if (!data.success) {
-
-      throw new Error(
-        data.message || "Unable to claim voucher."
-      );
+      document.getElementById("voucherSection").style.display = "block";
 
     }
 
-
-    // Show voucher number
-    document.getElementById("voucherNumber")
-      .textContent = data.voucherID;
-
-
-    // Show voucher status
-    document.getElementById("voucherStatus")
-      .textContent = data.status || "VALID";
-
-
-    // Existing number
-    if (data.existing) {
-
-      document.getElementById("successTitle")
-        .textContent = "Your eVoucher";
-
-      document.getElementById("existingMessage")
-        .style.display = "block";
-
-    }
-
-
-    document.getElementById("claimSection")
-      .style.display = "none";
-
-    document.getElementById("voucherSection")
-      .style.display = "block";
-
-
-  } catch (error) {
-
-    console.error(error);
-
-    showError(
-      "Unable to generate your voucher. Please try again."
-    );
-
-    claimButton.disabled = false;
-    claimButton.textContent = "CLAIM MY VOUCHER";
-
-  }
-
-}
-
-</script>
+  </script>
 
 </body>
 </html>
