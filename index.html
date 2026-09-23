@@ -244,6 +244,10 @@
 
         <div class="event-box">
 
+          <div class="event-label">
+            EVENT
+          </div>
+
           <div
             class="event-name"
             id="eventDisplay"
@@ -268,7 +272,9 @@
 
 
 
-      <!-- VOUCHER SECTION -->
+      <!-- ==============================
+           VOUCHER SECTION
+      ============================== -->
 
       <div
         id="voucherSection"
@@ -331,15 +337,13 @@
 
 /* ==================================================
    EVENT SETTINGS
-
-   CHANGE THESE 2 FOR EACH EVENT
 ================================================== */
 
 const EVENT_NAME =
   "CTRM 09/2026";
 
 const EVENT_ID =
-  "CTRM 09/2026";
+  "ctrm-09-2026";
 
 
 /* ==================================================
@@ -368,7 +372,7 @@ document.getElementById(
 
 
 /* ==================================================
-   CHECK PREVIOUS DOWNLOAD
+   CHECK IF ALREADY DOWNLOADED
 ================================================== */
 
 window.addEventListener(
@@ -379,9 +383,7 @@ window.addEventListener(
       localStorage.getItem(STORAGE_KEY);
 
     if (alreadyDownloaded === "downloaded") {
-
       showAlreadyClaimed();
-
     }
 
   }
@@ -389,7 +391,7 @@ window.addEventListener(
 
 
 /* ==================================================
-   CLAIM
+   CLAIM VOUCHER
 ================================================== */
 
 function claimVoucher() {
@@ -444,30 +446,27 @@ function generateVoucher() {
 
 
     /* ==================================================
-       EVENT NAME - BOTTOM RIGHT CORNER
+       EVENT NAME
+       BOTTOM-RIGHT
+       BLACK
+       NO "EVENT" WORD
     ================================================== */
 
 
     /*
-       Distance from RIGHT edge.
-
-       Increase 0.04 if you want
-       more space from the edge.
+       Smaller number = closer to right edge
     */
 
     const rightPadding =
-      canvas.width * 0.035;
+      canvas.width * 0.025;
 
 
     /*
-       Distance from BOTTOM edge.
-
-       Increase this value to move
-       the event name HIGHER.
+       Smaller number = closer to bottom
     */
 
     const bottomPadding =
-      canvas.height * 0.04;
+      canvas.height * 0.012;
 
 
     const eventX =
@@ -486,49 +485,32 @@ function generateVoucher() {
       "bottom";
 
 
-    /* ------------------------------
-       EVENT LABEL
-    ------------------------------ */
+    /* BLACK EVENT NAME */
 
     ctx.fillStyle =
-      "#494d4e";
-
-    ctx.font =
-      "bold " +
-      Math.round(
-        canvas.width * 0.018
-      ) +
-      "px Arial";
+      "#000000";
 
 
-    ctx.fillText(
-      "EVENT",
-      eventX,
-      eventY -
-      (canvas.height * 0.038)
-    );
+    /*
+       EVENT NAME FONT SIZE
 
-
-    /* ------------------------------
-       EVENT NAME
-    ------------------------------ */
-
-    ctx.fillStyle =
-      "#f58220";
-
+       0.016 = current
+       0.014 = smaller
+       0.012 = even smaller
+    */
 
     drawRightText(
       ctx,
       EVENT_NAME,
       eventX,
       eventY,
-      canvas.width * 0.65,
-      canvas.width * 0.015
+      canvas.width * 0.50,
+      canvas.width * 0.016
     );
 
 
     /* ==================================================
-       GENERATE FINAL VOUCHER
+       CREATE FINAL VOUCHER
     ================================================== */
 
     const generatedVoucher =
@@ -594,10 +576,10 @@ function drawRightText(
 
   while (
     ctx.measureText(text).width > maxWidth &&
-    fontSize > 16
+    fontSize > 10
   ) {
 
-    fontSize -= 2;
+    fontSize -= 1;
 
     ctx.font =
       "bold " +
@@ -617,7 +599,7 @@ function drawRightText(
 
 
 /* ==================================================
-   DOWNLOAD
+   DOWNLOAD VOUCHER
 ================================================== */
 
 function downloadVoucher() {
@@ -629,7 +611,9 @@ function downloadVoucher() {
 
 
   const link =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
 
 
   link.download =
@@ -664,11 +648,15 @@ function downloadVoucher() {
   );
 
 
+  /* HIDE DOWNLOAD BUTTON */
+
   document.getElementById(
     "downloadButton"
   ).style.display =
     "none";
 
+
+  /* SHOW CLAIMED MESSAGE */
 
   document.getElementById(
     "claimedBox"
@@ -727,8 +715,8 @@ function showAlreadyClaimed() {
 
 }
 
-</script>
 
+</script>
 
 </body>
 
