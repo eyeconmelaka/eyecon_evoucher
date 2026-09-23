@@ -1,1 +1,214 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Eyecon eVoucher</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px 15px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      background: white;
+      border-radius: 18px;
+      padding: 28px 20px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.10);
+      text-align: center;
+    }
+
+    .brand {
+      font-size: 27px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 12px 0 5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .phone-input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 17px;
+      margin-bottom: 12px;
+      outline: none;
+    }
+
+    .phone-input:focus {
+      border-color: #555;
+    }
+
+    .claim-button {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #333;
+      color: white;
+    }
+
+    .claim-button:hover {
+      background: #111;
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .voucher {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .voucher img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .download-button {
+      display: block;
+      margin-top: 15px;
+      padding: 15px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .success {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="card">
+
+      <div class="brand">EYECON</div>
+
+      <h1>Claim Your eVoucher</h1>
+
+      <div class="subtitle">
+        Enter your mobile number to receive your complimentary voucher.
+      </div>
+
+      <div id="claimSection">
+
+        <input
+          id="phone"
+          class="phone-input"
+          type="tel"
+          placeholder="e.g. 0123456789"
+        >
+
+        <button
+          class="claim-button"
+          onclick="claimVoucher()"
+        >
+          CLAIM MY VOUCHER
+        </button>
+
+        <div class="note">
+          Limited to one voucher per mobile number.
+        </div>
+
+      </div>
+
+
+      <div id="voucherSection" class="voucher">
+
+        <div class="success">
+          🎉 Your eVoucher is ready!
+        </div>
+
+        <img
+          src="evoucher.jpeg"
+          alt="Eyecon eVoucher"
+        >
+
+        <a
+          href="evoucher.jpeg"
+          download="Eyecon-eVoucher.jpeg"
+          class="download-button"
+        >
+          ↓ DOWNLOAD VOUCHER
+        </a>
+
+        <div class="note">
+          Save this voucher and present it during redemption.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function claimVoucher() {
+
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      if (phone.length < 9) {
+        alert("Please enter a valid mobile number.");
+        return;
+      }
+
+      document.getElementById("claimSection").style.display = "none";
+
+      document.getElementById("voucherSection").style.display = "block";
+
+    }
+
+  </script>
+
+</body>
+</html>
